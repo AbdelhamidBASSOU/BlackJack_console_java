@@ -33,6 +33,36 @@ public class Game {
        this.Cards=tmpGame;
    }
 
+    public ArrayList extraire_ieme_carte(ArrayList list,int n){
+
+        ArrayList tmp= new ArrayList<>();
+        tmp.add(list.get(n));
+        list.remove(n);
+        tmp.add(list);
+        list = tmp;
+        return list;
+    }
+
+    public ArrayList tirer_une_carte(ArrayList list){
+
+        Random random =new Random();
+        int randomIndex=0;
+        randomIndex=random.nextInt((list.size()-1)+1);
+        return extraire_ieme_carte(list, randomIndex);
+    }
+
+
+    public void melanger_jeu_cartes(){
+
+        ArrayList n;
+        ArrayList temp= new ArrayList<>();
+        for(int i=0;i<52;i++){
+            n=tirer_une_carte(this.Cards);
+            temp.add(n.get(0));
+        }
+        this.Cards=temp;
+    }
+
 
     public String toString(){
           String cardList="";

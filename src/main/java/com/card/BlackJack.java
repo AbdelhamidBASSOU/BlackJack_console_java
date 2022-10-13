@@ -13,7 +13,7 @@ public static void main(String[] args) {
 
     Game playingGame = new Game();
     playingGame.createGame();
-    playingGame.shuffleCards();
+    playingGame.melanger_jeu_cartes();
 
 
     Game playerGame = new Game();
